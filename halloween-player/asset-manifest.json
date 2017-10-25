@@ -1,7 +1,7 @@
 {
-  "main.css": "static/css/main.dacdb9d7.css",
-  "main.css.map": "static/css/main.dacdb9d7.css.map",
-  "main.js": "static/js/main.6dbea3f2.js",
-  "main.js.map": "static/js/main.6dbea3f2.js.map",
-  "static/media/bg.jpg": "static/media/bg.17feb551.jpg"
+  "main.css": "halloween-player/static/css/main.dacdb9d7.css",
+  "main.css.map": "halloween-player/static/css/main.dacdb9d7.css.map",
+  "main.js": "halloween-player/static/js/main.6dbea3f2.js",
+  "main.js.map": "halloween-player/static/js/main.6dbea3f2.js.map",
+  "halloween-player/static/media/bg.jpg": "halloween-player/static/media/bg.17feb551.jpg"
 }
