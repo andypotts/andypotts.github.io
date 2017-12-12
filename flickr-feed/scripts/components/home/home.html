@@ -1,0 +1,33 @@
+<div class="panel">
+  <div class="panel-body">
+      <div dir-paginate="image in $ctrl.images.photo  | itemsPerPage: 15" total-items="1500" current-page="$ctrl.page" class="media-row media">
+        <div class="media-left pull-left">
+          <div class="media-image" style="background-image:url({{image.urls[4].source}});" ui-sref="detail({id:image.id})"></div>
+        </div>
+        <div class="media-body">
+          <a ui-sref="detail({id:image.id, details:image})" title="{{image.title}}"><h3>{{image.title}}</h3></a>
+          <p ng-show="image.info">
+            <span class="meta">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <a ng-href="https://www.flickr.com/photos/{{image.info.owner.nsid}}" target="_blank" title="{{image.info.owner.username}}">{{image.info.owner.username}}</a>
+            </span>
+            <span class="meta meta--date-published">
+              <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <span>Published: {{image.info.dateuploaded | customDate }}</span>
+            </span>
+            <span class="meta">
+              <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> <a href="{{image.info.urls.url[0]._content}}" target="_blank" title="View on Flickr">View on Flickr</a>
+            </span>
+          </p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <dir-pagination-controls
+    on-page-change="$ctrl.pageChanged(newPageNumber)"
+    direction-links="true"
+    boundary-links="false"
+    auto-hide="true"
+    max-size="8"
+  ></dir-pagination-controls>
+</div>

@@ -1,0 +1,42 @@
+<div class="panel">
+  <div class="panel-body">
+
+    <div class="row">
+      <div class="col-lg-2 col-sm-4 col-xs-4 pull-right">
+        <a ui-sref="home" class="btn btn-default btn-sm pull-right"><i class="glyphicon glyphicon-chevron-left" aria-hidden="true"></i> Back</a>
+      </div>
+      <div class="col-lg-10 col-sm-8 col-xs-8" ng-if="!$ctrl.fail">
+        <a ng-href="{{$ctrl.image.info.urls.url[0]._content}}" target="_blank" title="{{$ctrl.image.info.title._content}}"><h1>{{$ctrl.image.info.title._content}}</h1></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12" ng-if="!$ctrl.fail">
+        <p ng-show="$ctrl.image.info">
+          <span class="meta">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>  <a ng-href="https://www.flickr.com/photos/{{$ctrl.image.info.owner.nsid}}" target="_blank" title="{{$ctrl.image.info.owner.username}}"> {{$ctrl.image.info.owner.username}}</a>
+            | <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Published: {{$ctrl.image.info.dateuploaded | customDate}}
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div class="row" ng-if="!$ctrl.fail">
+      <div class="col-sm-4">
+        <img ng-src="{{$ctrl.image.urls[5].source}}" alt="{{$ctrl.image.info.title._content}}" title="{{$ctrl.image.info.title._content}}" class="img-responsive">
+      </div>
+      <div class="col-sm-8">
+        <p>{{$ctrl.image.info.description._content | stripHtml }}</p>
+        <ul class="labels">
+          <li ng-repeat="tag in $ctrl.image.info.tags.tag" class="label label-default">
+            {{tag._content}}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div ng-if="$ctrl.fail" class="text-center">
+      <h2>404, image not found.</h2>
+    </div>
+
+  </div>
+</div>
